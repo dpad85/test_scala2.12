@@ -61,7 +61,7 @@ class MainViewModel : ViewModel() {
 
   override fun onCleared() {
     EventBus.getDefault().unregister(this)
-    system.shutdown()
+    system.terminate()
     super.onCleared()
   }
 

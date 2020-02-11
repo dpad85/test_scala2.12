@@ -39,8 +39,8 @@ android {
 
 dependencies {
 
-    def eclair_version = "0.3.8-android-phoenix-SNAPSHOT"
-    implementation("fr.acinq.eclair:eclair-core_2.11:$eclair_version") {
+    def eclair_version = "0.3.8-android-phoenix-scala2.12-SNAPSHOT"
+    implementation("fr.acinq.eclair:eclair-core_2.12:$eclair_version") {
         exclude group: 'fr.acinq.bitcoin', module: 'secp256k1-jni'
     }
 
