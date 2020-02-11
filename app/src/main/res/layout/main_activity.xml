@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="fr.acinq.calculator.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/button_subtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:minWidth="0dp"
+            android:padding="20dp"
+            android:text="@string/subtract"
+            app:layout_constraintTop_toTopOf="@id/current_value"
+            app:layout_constraintBottom_toBottomOf="@id/current_value"
+            app:layout_constraintEnd_toStartOf="@id/current_value"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/current_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@{String.valueOf(model.display)}"
+            android:textSize="32sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/button_add"
+            app:layout_constraintStart_toEndOf="@id/button_subtract"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:minWidth="0dp"
+            android:padding="20dp"
+            android:text="@string/add"
+            app:layout_constraintTop_toTopOf="@id/current_value"
+            app:layout_constraintBottom_toBottomOf="@id/current_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/current_value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
